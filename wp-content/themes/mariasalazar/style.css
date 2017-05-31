@@ -1,0 +1,2297 @@
+/*
+Theme Name: María Salazar
+Theme URI: http://underscores.me/
+Author: Luis Benítez
+Author URI: https://twitter.com/Luis_Btz
+Description: Minimal theme
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain: mariasalazar
+Tags:
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+
+María Salazar is based on Underscores http://underscores.me/, (C) 2012-2016 Automattic, Inc.
+Underscores is distributed under the terms of the GNU GPL v2 or later.
+
+Normalizing styles have been helped along thanks to the fine work of
+Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
+*/
+
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+# Normalize
+# Typography
+# Elements
+# Forms
+# Navigation
+	## Links
+	## Menus
+# Accessibility
+# Alignments
+# Clearings
+# Widgets
+# Content
+	## Posts and pages
+	## Comments
+# Infinite scroll
+# Media
+	## Captions
+	## Galleries
+#Custom styles
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+# Normalize
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+# Typography
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+# Elements
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+# Forms
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+# Navigation
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+## Links
+--------------------------------------------------------------*/
+
+
+/*--------------------------------------------------------------
+## Menus
+--------------------------------------------------------------*/
+
+/* Small menu. */
+.menu-toggle,
+.main-navigation.toggled ul {
+	display: block;
+}
+
+@media screen and (min-width: 37.5em) {
+	.menu-toggle {
+		display: none;
+	}
+	.main-navigation ul {
+		display: block;
+	}
+}
+
+.site-main .comment-navigation,
+.site-main .posts-navigation,
+.site-main .post-navigation {
+	margin: 0 0 1.5em;
+	overflow: hidden;
+}
+
+.comment-navigation .nav-previous,
+.posts-navigation .nav-previous,
+.post-navigation .nav-previous {
+	float: left;
+	width: 50%;
+}
+
+.comment-navigation .nav-next,
+.posts-navigation .nav-next,
+.post-navigation .nav-next {
+	float: right;
+	text-align: right;
+	width: 50%;
+}
+
+/*--------------------------------------------------------------
+# Accessibility
+--------------------------------------------------------------*/
+/* Text meant only for screen readers. */
+.screen-reader-text {
+	clip: rect(1px, 1px, 1px, 1px);
+	position: absolute !important;
+	height: 1px;
+	width: 1px;
+	overflow: hidden;
+	word-wrap: normal !important; /* Many screen reader and browser combinations announce broken words as they would appear visually. */
+}
+
+.screen-reader-text:focus {
+	background-color: #f1f1f1;
+	border-radius: 3px;
+	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+	clip: auto !important;
+	color: #21759b;
+	display: block;
+	font-size: 14px;
+	font-size: 0.875rem;
+	font-weight: bold;
+	height: auto;
+	left: 5px;
+	line-height: normal;
+	padding: 15px 23px 14px;
+	text-decoration: none;
+	top: 5px;
+	width: auto;
+	z-index: 100000; /* Above WP toolbar. */
+}
+
+/* Do not show the outline on the skip link target. */
+#content[tabindex="-1"]:focus {
+	outline: 0;
+}
+
+/*--------------------------------------------------------------
+# Alignments
+--------------------------------------------------------------*/
+.alignleft {
+	display: inline;
+	float: left;
+	margin-right: 1.5em;
+}
+
+.alignright {
+	display: inline;
+	float: right;
+	margin-left: 1.5em;
+}
+
+.aligncenter {
+	clear: both;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/*--------------------------------------------------------------
+# Clearings
+--------------------------------------------------------------*/
+.clear:before,
+.clear:after,
+.entry-content:before,
+.entry-content:after,
+.comment-content:before,
+.comment-content:after,
+.site-header:before,
+.site-header:after,
+.site-content:before,
+.site-content:after,
+.site-footer:before,
+.site-footer:after {
+	content: "";
+	display: table;
+	table-layout: fixed;
+}
+
+.clear:after,
+.entry-content:after,
+.comment-content:after,
+.site-header:after,
+.site-content:after,
+.site-footer:after {
+	clear: both;
+}
+
+/*--------------------------------------------------------------
+# Widgets
+--------------------------------------------------------------*/
+.widget {
+	margin: 0 0 1.5em;
+}
+
+/* Make sure select elements fit in widgets. */
+.widget select {
+	max-width: 100%;
+}
+
+/*--------------------------------------------------------------
+# Content
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+## Posts and pages
+--------------------------------------------------------------*/
+.sticky {
+	display: block;
+}
+
+.hentry {
+	margin: 0 0 1.5em;
+}
+
+.byline,
+.updated:not(.published) {
+	display: none;
+}
+
+.single .byline,
+.group-blog .byline {
+	display: inline;
+}
+
+.page-content,
+.entry-content,
+.entry-summary {
+	margin: 1.5em 0 0;
+}
+
+.page-links {
+	clear: both;
+	margin: 0 0 1.5em;
+}
+
+/*--------------------------------------------------------------
+## Comments
+--------------------------------------------------------------*/
+.comment-content a {
+	word-wrap: break-word;
+}
+
+.bypostauthor {
+	display: block;
+}
+
+/*--------------------------------------------------------------
+# Infinite scroll
+--------------------------------------------------------------*/
+/* Globally hidden elements when Infinite Scroll is supported and in use. */
+.infinite-scroll .posts-navigation, /* Older / Newer Posts Navigation (always hidden) */
+.infinite-scroll.neverending .site-footer { /* Theme Footer (when set to scrolling) */
+	display: none;
+}
+
+/* When Infinite Scroll has reached its end we need to re-display elements that were hidden (via .neverending) before. */
+.infinity-end.neverending .site-footer {
+	display: block;
+}
+
+/*--------------------------------------------------------------
+# Media
+--------------------------------------------------------------*/
+.page-content .wp-smiley,
+.entry-content .wp-smiley,
+.comment-content .wp-smiley {
+	border: none;
+	margin-bottom: 0;
+	margin-top: 0;
+	padding: 0;
+}
+
+/* Make sure embeds and iframes fit their containers. */
+embed,
+iframe,
+object {
+	max-width: 100%;
+}
+
+/*--------------------------------------------------------------
+## Captions
+--------------------------------------------------------------*/
+.wp-caption {
+	margin-bottom: 1.5em;
+	max-width: 100%;
+}
+
+.wp-caption img[class*="wp-image-"] {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.wp-caption .wp-caption-text {
+	margin: 0.8075em 0;
+}
+
+.wp-caption-text {
+	text-align: center;
+}
+
+/*--------------------------------------------------------------
+## Galleries
+--------------------------------------------------------------*/
+.gallery {
+	margin-bottom: 1.5em;
+}
+
+.gallery-item {
+	display: inline-block;
+	text-align: center;
+	vertical-align: top;
+	width: 100%;
+}
+
+.gallery-columns-2 .gallery-item {
+	max-width: 50%;
+}
+
+.gallery-columns-3 .gallery-item {
+	max-width: 33.33%;
+}
+
+.gallery-columns-4 .gallery-item {
+	max-width: 25%;
+}
+
+.gallery-columns-5 .gallery-item {
+	max-width: 20%;
+}
+
+.gallery-columns-6 .gallery-item {
+	max-width: 16.66%;
+}
+
+.gallery-columns-7 .gallery-item {
+	max-width: 14.28%;
+}
+
+.gallery-columns-8 .gallery-item {
+	max-width: 12.5%;
+}
+
+.gallery-columns-9 .gallery-item {
+	max-width: 11.11%;
+}
+
+.gallery-caption {
+	display: block;
+}
+
+/*--------------------------------------------------------------
+#Custom styles
+--------------------------------------------------------------*/
+@charset "UTF-8";
+/*-----------------------------------*  $TOAST-GRID
+  An insane grid.
+  You'd be mad to use it.
+  Usage
+  =====
+  Assuming default values:
+  <div class="grid">
+    <div class="grid__col grid__col--1-of-2">
+      A half-width column.
+    </div>
+    <div class="grid__col grid__col--1-of-4 grid__col--pull-1-of-4">
+      A quarter, pulled left by its own width. You get this, right?
+    </div>
+  </div>
+  Customisation
+  =============
+  $toast-grid-namespace and $toast-grid-column-namespace
+  adjusts the class names for the grid. With
+  default values, grid wrappers have a class
+  of '.grid' and columns '.grid__col'.
+  $toast-col-groups(n) adjusts column divisions.
+  For example, $toast-col-groups(12) will produce
+  a 12-column grid. $col-groups(3,6,8)
+  will produce a 3-, 6-, and 8-column grid.
+  $toast-gutter-width is—you guessed it—the gutter
+  width. Accepts any unit.
+  That's it. Have fun.
+\*-----------------------------------*/
+.row {
+  list-style: none;
+  margin-left: -20px; }
+
+.col--16-of-16 {
+  width: 100%; }
+
+.col--8-of-16 {
+  width: 50%; }
+
+.col--4-of-16 {
+  width: 25%; }
+
+.col--12-of-16 {
+  width: 75%; }
+
+.col--push-16-of-16 {
+  margin-left: 100%; }
+
+.col--push-8-of-16 {
+  margin-left: 50%; }
+
+.col--push-4-of-16 {
+  margin-left: 25%; }
+
+.col--push-12-of-16 {
+  margin-left: 75%; }
+
+.col--pull-16-of-16 {
+  margin-left: -100%; }
+
+.col--pull-8-of-16 {
+  margin-left: -50%; }
+
+.col--pull-4-of-16 {
+  margin-left: -25%; }
+
+.col--pull-12-of-16 {
+  margin-left: -75%; }
+
+.col--1-of-16 {
+  width: 6.25%; }
+
+.col--push-1-of-16 {
+  margin-left: 6.25%; }
+
+.col--pull-1-of-16 {
+  margin-left: -6.25%; }
+
+.col--2-of-16 {
+  width: 12.5%; }
+
+.col--push-2-of-16 {
+  margin-left: 12.5%; }
+
+.col--pull-2-of-16 {
+  margin-left: -12.5%; }
+
+.col--3-of-16 {
+  width: 18.75%; }
+
+.col--push-3-of-16 {
+  margin-left: 18.75%; }
+
+.col--pull-3-of-16 {
+  margin-left: -18.75%; }
+
+.col--5-of-16 {
+  width: 31.25%; }
+
+.col--push-5-of-16 {
+  margin-left: 31.25%; }
+
+.col--pull-5-of-16 {
+  margin-left: -31.25%; }
+
+.col--6-of-16 {
+  width: 37.5%; }
+
+.col--push-6-of-16 {
+  margin-left: 37.5%; }
+
+.col--pull-6-of-16 {
+  margin-left: -37.5%; }
+
+.col--7-of-16 {
+  width: 43.75%; }
+
+.col--push-7-of-16 {
+  margin-left: 43.75%; }
+
+.col--pull-7-of-16 {
+  margin-left: -43.75%; }
+
+.col--9-of-16 {
+  width: 56.25%; }
+
+.col--push-9-of-16 {
+  margin-left: 56.25%; }
+
+.col--pull-9-of-16 {
+  margin-left: -56.25%; }
+
+.col--10-of-16 {
+  width: 62.5%; }
+
+.col--push-10-of-16 {
+  margin-left: 62.5%; }
+
+.col--pull-10-of-16 {
+  margin-left: -62.5%; }
+
+.col--11-of-16 {
+  width: 68.75%; }
+
+.col--push-11-of-16 {
+  margin-left: 68.75%; }
+
+.col--pull-11-of-16 {
+  margin-left: -68.75%; }
+
+.col--13-of-16 {
+  width: 81.25%; }
+
+.col--push-13-of-16 {
+  margin-left: 81.25%; }
+
+.col--pull-13-of-16 {
+  margin-left: -81.25%; }
+
+.col--14-of-16 {
+  width: 87.5%; }
+
+.col--push-14-of-16 {
+  margin-left: 87.5%; }
+
+.col--pull-14-of-16 {
+  margin-left: -87.5%; }
+
+.col--15-of-16 {
+  width: 93.75%; }
+
+.col--push-15-of-16 {
+  margin-left: 93.75%; }
+
+.col--pull-15-of-16 {
+  margin-left: -93.75%; }
+
+.col {
+  box-sizing: border-box;
+  display: inline-block;
+  margin-right: -.25em;
+  min-height: 1px;
+  padding-left: 20px;
+  vertical-align: top; }
+  @media (max-width: 700px) {
+    .col {
+      display: block;
+      margin-left: 0;
+      margin-right: 0;
+      width: auto; } }
+  @media (max-width: 700px) and (min-width: 480px) {
+    .col[class*="col--m-"] {
+      display: inline-block;
+      margin-right: -.24em; }
+    .col.col--m-1-of-2, .col.col--m-2-of-4 {
+      width: 50%; }
+    .col.col--m-1-of-3 {
+      width: 33.33333%; }
+    .col.col--m-2-of-3 {
+      width: 66.66667%; }
+    .col.col--m-1-of-4 {
+      width: 25%; }
+    .col.col--m-3-of-4 {
+      width: 75%; } }
+  @media (max-width: 480px) {
+    .col[class*="col--s-"] {
+      display: inline-block;
+      margin-right: -.24em; }
+    .col.col--s-1-of-2, .col.col--s-2-of-4 {
+      width: 50%; }
+    .col.col--s-1-of-3 {
+      width: 33.33333%; }
+    .col.col--s-2-of-3 {
+      width: 66.66667%; }
+    .col.col--s-1-of-4 {
+      width: 25%; }
+    .col.col--s-3-of-4 {
+      width: 75%; } }
+
+.col--centered {
+  display: block;
+  margin-left: auto;
+  margin-right: auto; }
+
+.col--d-first {
+  float: left; }
+
+.col--d-last {
+  float: right; }
+
+.row--no-gutter {
+  margin-left: 0;
+  width: 100%; }
+  .row--no-gutter .col {
+    padding-left: 0; }
+  .row--no-gutter .col--span-all {
+    margin-left: 0;
+    width: 100%; }
+
+.col--ab {
+  vertical-align: bottom; }
+
+.col--am {
+  vertical-align: middle; }
+
+@font-face {
+  font-family: 'Apercu-Mono';
+  src: url("../fonts/Apercu-Mono.eot?#iefix") format("embedded-opentype"), url("../fonts/Apercu-Mono.otf") format("opentype"), url("../fonts/Apercu-Mono.woff") format("woff"), url("Apercu-Mono.ttf") format("truetype"), url("../fonts/Apercu-Mono.svg#Apercu-Mono") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Baskerville';
+  src: url("../fonts/Baskerville.eot?#iefix") format("embedded-opentype"), url("../fonts/Baskerville.woff") format("woff"), url("../fonts/Baskerville.ttf") format("truetype"), url("../fonts/Baskerville.svg#Baskerville") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+/*! normalize.css v7.0.0 | MIT License | github.com/necolas/normalize.css */
+/* Document
+   ========================================================================== */
+/**
+ * 1. Correct the line height in all browsers.
+ * 2. Prevent adjustments of font size after orientation changes in
+ *    IE on Windows Phone and in iOS.
+ */
+html {
+  line-height: 1.15;
+  /* 1 */
+  -ms-text-size-adjust: 100%;
+  /* 2 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */ }
+
+/* Sections
+   ========================================================================== */
+/**
+ * Remove the margin in all browsers (opinionated).
+ */
+body {
+  margin: 0; }
+
+.container {
+  box-sizing: border-box;
+  display: block;
+  max-width: 100%;
+  margin: 120px auto 50px auto !important; }
+
+@media screen and (max-width: 640px) {
+  .cel {
+    padding-left: 20% !important;
+    padding-right: 20px;
+    margin: 0 auto !important; } }
+
+.lead {
+  font-family: "Baskerville";
+  font-size: 1.5em;
+  letter-spacing: 5px;
+  margin: 50px 0 50px 0 !important;
+  font-weight: lighter !important; }
+
+.text {
+  font-family: "Baskerville";
+  font-size: 1em;
+  letter-spacing: 2.5px; }
+
+.blend {
+  mix-blend-mode: exclusion !important;
+  color: skyblue !important; }
+
+.line {
+  margin: 20px 0;
+  width: 1pt;
+  height: 40px;
+  background: #EAA78D; }
+
+.clearfix {
+  overflow: auto;
+  zoom: 1; }
+
+.block {
+  display: block; }
+
+.center {
+  text-align: center; }
+
+.float-right {
+  float: right; }
+
+section.pree {
+  display: none;
+  padding: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); }
+
+section.pree #gradient {
+  border-radius: 100%;
+  width: 500px;
+  height: 500px;
+  padding: 0px;
+  box-shadow: inset 0px 0px 40px 40px #F4F3F1; }
+
+@media screen and (max-width: 600px) {
+  section.pree #gradient {
+    width: 300px;
+    height: 300px; } }
+
+/**
+ * Add the correct display in IE 9-.
+ */
+article,
+aside,
+footer,
+header,
+nav,
+section {
+  display: block; }
+
+/**
+ * Correct the font size and margin on `h1` elements within `section` and
+ * `article` contexts in Chrome, Firefox, and Safari.
+ */
+h1, h2, h3, h4, h5 {
+  padding: 0;
+  margin: 0;
+  font-weight: lighter; }
+
+/* Grouping content
+   ========================================================================== */
+/**
+ * Add the correct display in IE 9-.
+ * 1. Add the correct display in IE.
+ */
+figcaption,
+figure,
+main {
+  /* 1 */
+  display: block; }
+
+/**
+ * Add the correct margin in IE 8.
+ */
+figure {
+  margin: 1em 40px; }
+
+/**
+ * 1. Add the correct box sizing in Firefox.
+ * 2. Show the overflow in Edge and IE.
+ */
+hr {
+  box-sizing: content-box;
+  /* 1 */
+  height: 0;
+  /* 1 */
+  overflow: visible;
+  /* 2 */ }
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+pre {
+  font-family: monospace, monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */ }
+
+/* Text-level semantics
+   ========================================================================== */
+/**
+ * 1. Remove the gray background on active links in IE 10.
+ * 2. Remove gaps in links underline in iOS 8+ and Safari 8+.
+ */
+a {
+  background-color: transparent;
+  /* 1 */
+  -webkit-text-decoration-skip: objects;
+  /* 2 */ }
+
+/**
+ * 1. Remove the bottom border in Chrome 57- and Firefox 39-.
+ * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+ */
+abbr[title] {
+  border-bottom: none;
+  /* 1 */
+  text-decoration: underline;
+  /* 2 */
+  text-decoration: underline dotted;
+  /* 2 */ }
+
+/**
+ * Prevent the duplicate application of `bolder` by the next rule in Safari 6.
+ */
+b,
+strong {
+  font-weight: inherit; }
+
+/**
+ * Add the correct font weight in Chrome, Edge, and Safari.
+ */
+b,
+strong {
+  font-weight: bolder; }
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+code,
+kbd,
+samp {
+  font-family: monospace, monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */ }
+
+/**
+ * Add the correct font style in Android 4.3-.
+ */
+dfn {
+  font-style: italic; }
+
+/**
+ * Add the correct background and color in IE 9-.
+ */
+mark {
+  background-color: #ff0;
+  color: #000; }
+
+/**
+ * Add the correct font size in all browsers.
+ */
+small {
+  font-size: 80%; }
+
+/**
+ * Prevent `sub` and `sup` elements from affecting the line height in
+ * all browsers.
+ */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline; }
+
+sub {
+  bottom: -0.25em; }
+
+sup {
+  top: -0.5em; }
+
+/* Embedded content
+   ========================================================================== */
+/**
+ * Add the correct display in IE 9-.
+ */
+audio,
+video {
+  display: inline-block; }
+
+/**
+ * Add the correct display in iOS 4-7.
+ */
+audio:not([controls]) {
+  display: none;
+  height: 0; }
+
+/**
+ * Remove the border on images inside links in IE 10-.
+ */
+img {
+  border-style: none; }
+
+/**
+ * Hide the overflow in IE.
+ */
+svg:not(:root) {
+  overflow: hidden; }
+
+/* Forms
+   ========================================================================== */
+/**
+ * 1. Change the font styles in all browsers (opinionated).
+ * 2. Remove the margin in Firefox and Safari.
+ */
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: sans-serif;
+  /* 1 */
+  font-size: 100%;
+  /* 1 */
+  line-height: 1.15;
+  /* 1 */
+  margin: 0;
+  /* 2 */ }
+
+/**
+ * Show the overflow in IE.
+ * 1. Show the overflow in Edge.
+ */
+button,
+input {
+  /* 1 */
+  overflow: visible; }
+
+/**
+ * Remove the inheritance of text transform in Edge, Firefox, and IE.
+ * 1. Remove the inheritance of text transform in Firefox.
+ */
+button,
+select {
+  /* 1 */
+  text-transform: none; }
+
+/**
+ * 1. Prevent a WebKit bug where (2) destroys native `audio` and `video`
+ *    controls in Android 4.
+ * 2. Correct the inability to style clickable types in iOS and Safari.
+ */
+button,
+html [type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button;
+  /* 2 */ }
+
+/**
+ * Remove the inner border and padding in Firefox.
+ */
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+  border-style: none;
+  padding: 0; }
+
+/**
+ * Restore the focus styles unset by the previous rule.
+ */
+button:-moz-focusring,
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
+  outline: 1px dotted ButtonText; }
+
+/**
+ * Correct the padding in Firefox.
+ */
+fieldset {
+  padding: 0.35em 0.75em 0.625em; }
+
+/**
+ * 1. Correct the text wrapping in Edge and IE.
+ * 2. Correct the color inheritance from `fieldset` elements in IE.
+ * 3. Remove the padding so developers are not caught out when they zero out
+ *    `fieldset` elements in all browsers.
+ */
+legend {
+  box-sizing: border-box;
+  /* 1 */
+  color: inherit;
+  /* 2 */
+  display: table;
+  /* 1 */
+  max-width: 100%;
+  /* 1 */
+  padding: 0;
+  /* 3 */
+  white-space: normal;
+  /* 1 */ }
+
+/**
+ * 1. Add the correct display in IE 9-.
+ * 2. Add the correct vertical alignment in Chrome, Firefox, and Opera.
+ */
+progress {
+  display: inline-block;
+  /* 1 */
+  vertical-align: baseline;
+  /* 2 */ }
+
+/**
+ * Remove the default vertical scrollbar in IE.
+ */
+textarea {
+  overflow: auto; }
+
+/**
+ * 1. Add the correct box sizing in IE 10-.
+ * 2. Remove the padding in IE 10-.
+ */
+[type="checkbox"],
+[type="radio"] {
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */ }
+
+/**
+ * Correct the cursor style of increment and decrement buttons in Chrome.
+ */
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+  height: auto; }
+
+/**
+ * 1. Correct the odd appearance in Chrome and Safari.
+ * 2. Correct the outline style in Safari.
+ */
+[type="search"] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  outline-offset: -2px;
+  /* 2 */ }
+
+/**
+ * Remove the inner padding and cancel buttons in Chrome and Safari on macOS.
+ */
+[type="search"]::-webkit-search-cancel-button,
+[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none; }
+
+/**
+ * 1. Correct the inability to style clickable types in iOS and Safari.
+ * 2. Change font properties to `inherit` in Safari.
+ */
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  /* 1 */
+  font: inherit;
+  /* 2 */ }
+
+/* Interactive
+   ========================================================================== */
+/*
+ * Add the correct display in IE 9-.
+ * 1. Add the correct display in Edge, IE, and Firefox.
+ */
+details,
+menu {
+  display: block; }
+
+/*
+ * Add the correct display in all browsers.
+ */
+summary {
+  display: list-item; }
+
+/* Scripting
+   ========================================================================== */
+/**
+ * Add the correct display in IE 9-.
+ */
+canvas {
+  display: inline-block; }
+
+/**
+ * Add the correct display in IE.
+ */
+template {
+  display: none; }
+
+/* Hidden
+   ========================================================================== */
+/**
+ * Add the correct display in IE 10-.
+ */
+[hidden] {
+  display: none; }
+
+body {
+  background-color: #F4F3F1;
+  font-size: 10pt;
+  line-height: 1.6;
+  font-family: 'Baskerville';
+  -webkit-text-size-adjust: 100%;
+  overflow-x: hidden; }
+
+@media screen and (min-width: 1290px) {
+  body {
+    font-size: 13pt !important; } }
+
+::-moz-selection {
+  background: #FFF498; }
+
+::selection {
+  background: #FFF498; }
+
+::-moz-selection {
+  background: #FFF498; }
+
+img::-moz-selection {
+  background: transparent; }
+
+img::selection {
+  background: transparent; }
+
+img::-moz-selection {
+  background: transparent; }
+
+body {
+  -webkit-tap-highlight-color: #FFF498; }
+
+a {
+  color: #000000;
+  text-decoration: none;
+  outline: 0;
+  cursor: pointer; }
+  a:hover, a:focus {
+    color: gray; }
+
+.button,
+button,
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+  display: inline-block;
+  height: 38px;
+  padding: 0 30px;
+  color: #555;
+  text-align: center;
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 38px;
+  letter-spacing: .1rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  white-space: nowrap;
+  background-color: transparent;
+  border-radius: 4px;
+  border: 1px solid #bbb;
+  cursor: pointer;
+  box-sizing: border-box; }
+  .button:hover, .button:active, .button:focus,
+  button:hover,
+  button:active,
+  button:focus,
+  input[type="submit"]:hover,
+  input[type="submit"]:active,
+  input[type="submit"]:focus,
+  input[type="reset"]:hover,
+  input[type="reset"]:active,
+  input[type="reset"]:focus,
+  input[type="button"]:hover,
+  input[type="button"]:active,
+  input[type="button"]:focus {
+    color: #333;
+    border-color: #888;
+    outline: 0; }
+
+section.pre {
+  display: none;
+  padding: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); }
+  section.pre #gradient {
+    border-radius: 100%;
+    width: 500px;
+    height: 500px;
+    padding: 0px;
+    box-shadow: inset 0px 0px 40px 40px #F4F3F1; }
+
+section.home .maria img {
+  z-index: -1;
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  max-width: 260px; }
+
+section.home section.menu {
+  z-index: 1;
+  display: none; }
+  section.home section.menu .marialogo {
+    opacity: 0; }
+
+@media screen and (max-width: 600px) {
+  section.pre #gradient {
+    width: 300px;
+    height: 300px; } }
+
+section.menu {
+  z-index: 1;
+  padding: 30px;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: calc(6% - 30px);
+  box-sizing: border-box; }
+  section.menu .blends .lay {
+    width: 140px;
+    height: 40px;
+    position: fixed;
+    -webkit-transform: rotate(270deg);
+    -ms-transform: rotate(270deg);
+    transform: rotate(270deg);
+    bottom: calc(6% + 50px);
+    left: calc(6% - 50px); }
+    section.menu .blends .lay img {
+      z-index: 1;
+      width: 140px;
+      height: 40px;
+      position: absolute; }
+    section.menu .blends .lay span {
+      display: inline-block;
+      position: relative;
+      top: 5px;
+      left: 8px;
+      padding: 0;
+      margin: 0;
+      font-size: .8em;
+      font-family: "Baskerville";
+      letter-spacing: 4px;
+      line-height: 1.5; }
+  section.menu .blends .marialogo img {
+    z-index: 1;
+    width: 90px;
+    margin-bottom: 50px; }
+  section.menu .blends .logo {
+    position: fixed;
+    right: 6%;
+    top: 5%;
+    z-index: 1; }
+    section.menu .blends .logo img {
+      width: 100px; }
+  section.menu nav .click {
+    font-family: "Baskerville";
+    font-size: 1em;
+    cursor: pointer; }
+  section.menu nav .none {
+    display: none; }
+  section.menu nav .full {
+    -webkit-animation-name: fadeInDown;
+    animation-name: fadeInDown;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both; }
+    section.menu nav .full .line {
+      margin: 20px 0;
+      width: 1pt;
+      height: 40px;
+      background: #EAA78D; }
+    section.menu nav .full .links ul {
+      width: 125px;
+      text-align: justify !important;
+      padding: 0 !important;
+      margin: 0 !important; }
+      section.menu nav .full .links ul li {
+        line-height: 2em;
+        display: inline;
+        list-style: none;
+        color: black;
+        text-transform: uppercase;
+        text-align: justify;
+        font-size: .8em; }
+      section.menu nav .full .links ul li:nth-child(1) {
+        letter-spacing: 20px; }
+      section.menu nav .full .links ul li:nth-child(2) {
+        letter-spacing: 8.7px; }
+      section.menu nav .full .links ul li:nth-child(3) {
+        letter-spacing: 36px; }
+      section.menu nav .full .links ul li:nth-child(4) {
+        letter-spacing: 7.9px; }
+      section.menu nav .full .links ul li:nth-child(5) {
+        letter-spacing: 12px; }
+      section.menu nav .full .links ul li:nth-child(6) {
+        letter-spacing: 10.7px; }
+    section.menu nav .full .lenguaje {
+      font-family: "Baskerville";
+      text-transform: uppercase;
+      font-size: .8em; }
+      section.menu nav .full .lenguaje a {
+        color: #7C7C7B; }
+        section.menu nav .full .lenguaje a:last-child {
+          float: right; }
+        section.menu nav .full .lenguaje a:hover {
+          color: none; }
+      section.menu nav .full .lenguaje .active {
+        pointer-events: none;
+        color: black; }
+
+.solid {
+  background: #F4F3F1; }
+
+@-webkit-keyframes fadeInDown {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -50%, 0);
+    transform: translate3d(0, -50%, 0); }
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none; } }
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -50%, 0);
+    transform: translate3d(0, -50%, 0); }
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none; } }
+
+@media screen and (min-width: 1290px) {
+  .blends .lay span {
+    top: 5px !important;
+    font-size: .7em !important;
+    line-height: 1.3 !important; }
+  nav .full .links ul {
+    width: 138px !important;
+    text-align: justify !important;
+    padding: 0 !important;
+    margin: 0 !important; }
+    nav .full .links ul li {
+      line-height: 2em;
+      display: inline;
+      list-style: none;
+      color: black;
+      text-transform: uppercase;
+      text-align: justify;
+      font-size: .8em; }
+    nav .full .links ul li:nth-child(1) {
+      letter-spacing: 18px !important; }
+    nav .full .links ul li:nth-child(2) {
+      letter-spacing: 6.15px !important; }
+    nav .full .links ul li:nth-child(3) {
+      letter-spacing: 33px !important; }
+    nav .full .links ul li:nth-child(4) {
+      letter-spacing: 5.7px !important; }
+    nav .full .links ul li:nth-child(5) {
+      letter-spacing: 9.7px !important; }
+    nav .full .links ul li:nth-child(6) {
+      letter-spacing: 8px !important; } }
+
+section.perfil {
+  display: none; }
+  section.perfil .uno {
+    margin-bottom: 120px; }
+    section.perfil .uno .float-rigth {
+      float: right;
+      margin-bottom: 50px; }
+      section.perfil .uno .float-rigth .img {
+        top: 0;
+        width: 100%; }
+        section.perfil .uno .float-rigth .img img {
+          margin-top: 50px;
+          float: right;
+          display: block;
+          width: 100%; }
+  section.perfil .dos {
+    margin-bottom: 120px; }
+    section.perfil .dos .img {
+      top: 0;
+      width: 100%; }
+      section.perfil .dos .img img {
+        margin-top: -10px;
+        float: right;
+        display: block;
+        width: 100%;
+        margin-bottom: 50px; }
+    section.perfil .dos .line {
+      margin: 20px 0;
+      width: 1pt;
+      height: 30px;
+      background: #EAA78D; }
+  section.perfil .testimonios1 {
+    margin-bottom: 80px; }
+    section.perfil .testimonios1 h2 {
+      margin-bottom: 60px !important; }
+    section.perfil .testimonios1 h3 {
+      border: solid 1pt #EAA78D;
+      padding: 12px 30px;
+      font-size: 12pt;
+      margin-bottom: 60px; }
+    section.perfil .testimonios1 p {
+      font-size: 1em !important;
+      letter-spacing: 2.5 !important; }
+  section.perfil .testimonios2 {
+    margin-bottom: 80px; }
+    section.perfil .testimonios2 h3 {
+      border: solid 1pt #EAA78D;
+      padding: 12px 30px;
+      font-size: 12pt;
+      margin-bottom: 60px; }
+    section.perfil .testimonios2 p {
+      font-size: 1em !important;
+      letter-spacing: 2.5 !important; }
+
+section.programas {
+  display: none; }
+  section.programas .container {
+    font-family: "Baskerville"; }
+    section.programas .container .sec {
+      margin: 120px 0; }
+      section.programas .container .sec .arrow {
+        position: relative;
+        bottom: 20px; }
+        section.programas .container .sec .arrow p {
+          line-height: 0;
+          position: relative;
+          left: 9px;
+          font-family: "Apercu-Mono";
+          text-transform: uppercase;
+          font-size: .8em;
+          top: 1px;
+          letter-spacing: 1px; }
+        section.programas .container .sec .arrow img {
+          width: 110px;
+          position: absolute; }
+
+@media screen and (min-width: 1290px) {
+  section.programas .container .sec {
+    margin: 120px 0; }
+    section.programas .container .sec .arrow p {
+      line-height: 0;
+      position: relative;
+      left: 9px;
+      font-family: "Apercu-Mono";
+      text-transform: uppercase;
+      font-size: .7em;
+      top: 0px;
+      letter-spacing: 1px; } }
+
+@media screen and (max-width: 640px) {
+  section.programas {
+    width: 60%;
+    margin: 0 auto; }
+    section.programas .container .sec {
+      margin: 120px 0; }
+      section.programas .container .sec .arrow {
+        margin-top: 50px; }
+        section.programas .container .sec .arrow p {
+          line-height: 0;
+          position: relative;
+          left: 9px;
+          font-family: "Apercu-Mono";
+          text-transform: uppercase;
+          font-size: .8em;
+          top: 11px !important;
+          letter-spacing: 1px; } }
+
+section.contacto {
+  display: none; }
+  section.contacto .container {
+    margin-top: 50px !important;
+    margin-bottom: 0px !important; }
+    section.contacto .container .head {
+      text-transform: uppercase;
+      letter-spacing: 3px; }
+    section.contacto .container form {
+      font-family: "Baskerville";
+      padding: 20px;
+      box-sizing: border-box;
+      font-size: 2em;
+      font-family: "Baskerville" !important;
+      display: block;
+      max-width: 60%;
+      margin: 40px auto 10px auto;
+      overflow: auto; }
+      section.contacto .container form input::-webkit-input-placeholder {
+        color: rgba(0, 0, 0, 0.15); }
+      section.contacto .container form input::-moz-placeholder {
+        color: rgba(0, 0, 0, 0.15); }
+      section.contacto .container form input:-ms-input-placeholder {
+        color: rgba(0, 0, 0, 0.15); }
+      section.contacto .container form input::placeholder {
+        color: rgba(0, 0, 0, 0.15); }
+      section.contacto .container form input[type="text"] {
+        letter-spacing: 3px;
+        padding: 10px;
+        width: 400px;
+        font-family: "Baskerville" !important;
+        background: none;
+        border: 0;
+        border-bottom: solid 1px #EAA78D; }
+        section.contacto .container form input[type="text"]:focus {
+          outline: none; }
+      section.contacto .container form input[type="email"] {
+        letter-spacing: 3px;
+        padding: 10px;
+        margin-left: 100px;
+        margin-top: 50px;
+        display: block;
+        width: 400px;
+        font-family: "Baskerville" !important;
+        background: none;
+        border: 0;
+        border-bottom: solid 1px #EAA78D; }
+        section.contacto .container form input[type="email"]:focus {
+          outline: none; }
+      section.contacto .container form input[type="submit"] {
+        margin-top: 50px;
+        background: url("../img/arrow.svg");
+        display: block;
+        width: 132px;
+        border: none;
+        padding-left: 0;
+        font-family: "Baskerville";
+        float: right;
+        letter-spacing: 2.5px; }
+      section.contacto .container form textarea {
+        letter-spacing: 3px;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-top: 10px;
+        padding-bottom: 150px;
+        width: 450px;
+        margin-left: 200px;
+        margin-top: 50px;
+        font-family: "Baskerville" !important;
+        background: none;
+        border: 0;
+        border-bottom: solid 1px #EAA78D; }
+        section.contacto .container form textarea:focus {
+          outline: none; }
+      section.contacto .container form textarea::-webkit-input-placeholder {
+        color: rgba(0, 0, 0, 0.15); }
+      section.contacto .container form textarea::-moz-placeholder {
+        color: rgba(0, 0, 0, 0.15); }
+      section.contacto .container form textarea:-ms-input-placeholder {
+        color: rgba(0, 0, 0, 0.15); }
+      section.contacto .container form textarea::placeholder {
+        color: rgba(0, 0, 0, 0.15); }
+    section.contacto .container .datos {
+      font-family: "Baskerville";
+      letter-spacing: 2.5px;
+      margin-bottom: 50px !important; }
+      section.contacto .container .datos p {
+        line-height: 0; }
+
+@media screen and (max-width: 640px) {
+  section.contacto .head {
+    margin-top: 150px !important;
+    margin-left: 30% !important; }
+  section.contacto form {
+    font-size: 1.5em !important; }
+    section.contacto form input[type="text"] {
+      letter-spacing: 3px;
+      padding: 10px;
+      max-width: 200px !important;
+      margin-right: 10px !important;
+      font-family: "Baskerville" !important;
+      background: none;
+      border: 0;
+      border-bottom: solid 1px #EAA78D; }
+      section.contacto form input[type="text"]:focus {
+        outline: none; }
+    section.contacto form input[type="email"] {
+      letter-spacing: 3px;
+      padding: 10px;
+      margin-left: 0 !important;
+      margin-top: 50px;
+      display: block;
+      width: 200px !important;
+      font-family: "Baskerville" !important;
+      background: none;
+      border: 0;
+      border-bottom: solid 1px #EAA78D; }
+      section.contacto form input[type="email"]:focus {
+        outline: none; }
+    section.contacto form textarea {
+      letter-spacing: 3px;
+      padding-left: 10px;
+      padding-right: 10px;
+      padding-top: 10px;
+      padding-bottom: 150px;
+      width: 200px !important;
+      margin-left: 0 !important;
+      margin-top: 50px;
+      font-family: "Baskerville" !important;
+      background: none;
+      border: 0;
+      border-bottom: solid 1px #EAA78D; } }
+
+section.talleres {
+  display: none; }
+  section.talleres .imagen .lead {
+    font-size: 1.3em;
+    text-align: center;
+    padding: 15px;
+    border-top: solid 1px #EAA78D;
+    border-bottom: solid 1px #EAA78D; }
+  section.talleres .imagen .img img {
+    width: 100%; }
+  section.talleres .etiqueta {
+    margin-top: 50px; }
+    section.talleres .etiqueta .lay {
+      width: 140px;
+      height: 40px; }
+      section.talleres .etiqueta .lay img {
+        width: 170px;
+        height: 40px;
+        position: absolute; }
+      section.talleres .etiqueta .lay span {
+        text-transform: uppercase;
+        display: inline;
+        position: relative;
+        top: 10px;
+        left: 8px;
+        padding: 0 5px 0 0;
+        margin: 0;
+        font-size: .9em;
+        font-family: "Apercu-Mono";
+        letter-spacing: 1.5px;
+        line-height: 1.5; }
+
+@media screen and (min-width: 1290px) {
+  section.talleres .etiqueta .lay span {
+    text-transform: uppercase;
+    display: inline;
+    position: relative;
+    top: 7px !important;
+    left: 12px;
+    padding: 0 5px 0 0;
+    margin: 0;
+    font-size: .7em !important;
+    font-family: "Apercu-Mono";
+    letter-spacing: 1px;
+    line-height: 1.5; } }
+
+@media screen and (max-width: 640px) {
+  section.talleres {
+    position: relative !important; }
+    section.talleres .lead {
+      position: relative;
+      left: 10% !important;
+      width: 40%;
+      margin: 0 auto;
+      text-align: center; }
+    section.talleres .texto .text {
+      margin-top: 150px !important; } }
+
+section.superballs {
+  display: none; }
+  section.superballs .imagen .img {
+    position: relative; }
+    section.superballs .imagen .img img {
+      width: 100%; }
+    section.superballs .imagen .img .cuadro {
+      padding: 15px;
+      border: solid 1px black;
+      position: absolute;
+      top: -12%;
+      left: -12%; }
+      section.superballs .imagen .img .cuadro p {
+        text-transform: uppercase;
+        text-align: center;
+        padding: 0;
+        line-height: 2;
+        margin: 0; }
+        section.superballs .imagen .img .cuadro p span.left {
+          float: left;
+          text-align: left; }
+        section.superballs .imagen .img .cuadro p span.right {
+          float: right;
+          text-align: right; }
+
+@media screen and (max-width: 640px) {
+  section.superballs .imagen .img {
+    position: relative; }
+    section.superballs .imagen .img img {
+      width: 100%; }
+    section.superballs .imagen .img .cuadro {
+      padding: 15px;
+      border: solid 1px black;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%); } }
+
+section.blog {
+  display: none; }
+  section.blog .container main article {
+    position: relative;
+    margin-bottom: 8%; }
+    section.blog .container main article .content header .lay {
+      width: 140px;
+      height: 40px; }
+      section.blog .container main article .content header .lay img {
+        width: 170px;
+        height: 40px;
+        position: absolute; }
+      section.blog .container main article .content header .lay time {
+        text-transform: uppercase;
+        display: block;
+        position: relative;
+        top: 11px;
+        left: 8px;
+        margin: 0;
+        font-size: .9em;
+        letter-spacing: 7px;
+        line-height: 1.5;
+        text-align: center !important;
+        font-family: "Apercu-Mono"; }
+    section.blog .container main article .content header .lead {
+      margin-top: 50px; }
+    section.blog .container main article .content header .post-image img {
+      width: 100%; }
+    section.blog .container main article .content header .text {
+      margin-left: 20%;
+      width: 20%; }
+    section.blog .container main article .content .blogmas {
+      font-family: "Baskerville";
+      letter-spacing: 3px; }
+      section.blog .container main article .content .blogmas .contentmas {
+        width: 100%;
+        display: none;
+        margin-top: 50px; }
+        section.blog .container main article .content .blogmas .contentmas .aparte .quote {
+          margin-top: 50px;
+          padding: 20px 70px;
+          border: solid 1px #EAA78D;
+          font-size: 1.5em; }
+        section.blog .container main article .content .blogmas .contentmas .aparte .pie {
+          margin-top: 50px;
+          line-height: 1.3; }
+      section.blog .container main article .content .blogmas .leermenos {
+        cursor: pointer;
+        margin-top: 30px;
+        display: none; }
+      section.blog .container main article .content .blogmas .leermas {
+        cursor: pointer;
+        margin-top: 30px; }
+    section.blog .container main article:nth-child(odd) .content header .lay {
+      margin-left: 15%; }
+    section.blog .container main article:nth-child(odd) .content header .post-image img {
+      position: absolute;
+      top: 0;
+      max-width: 50%;
+      right: 0; }
+    section.blog .container main article:nth-child(odd) .content header .lead {
+      margin-left: 15% !important;
+      width: 40%; }
+    section.blog .container main article:nth-child(odd) .content .blogmas {
+      position: relative;
+      margin-left: 15% !important; }
+      section.blog .container main article:nth-child(odd) .content .blogmas .contentmas {
+        width: 35%; }
+        section.blog .container main article:nth-child(odd) .content .blogmas .contentmas .aparte {
+          width: 45%;
+          position: absolute;
+          top: 0;
+          right: 20px !important; }
+          section.blog .container main article:nth-child(odd) .content .blogmas .contentmas .aparte .quote {
+            margin-top: -30px !important; }
+        section.blog .container main article:nth-child(odd) .content .blogmas .contentmas .leermas {
+          margin-left: 15%; }
+        section.blog .container main article:nth-child(odd) .content .blogmas .contentmas .leermenos {
+          margin-left: 15%; }
+    section.blog .container main article:nth-child(even) .content header .lay {
+      position: relative;
+      margin-left: 60%; }
+    section.blog .container main article:nth-child(even) .content header .post-image img {
+      margin: 0;
+      position: absolute;
+      top: 0;
+      max-width: 50%;
+      left: 0; }
+    section.blog .container main article:nth-child(even) .content header .lead {
+      position: relative;
+      left: 60%;
+      display: block;
+      width: 40% !important; }
+    section.blog .container main article:nth-child(even) .content header .text {
+      margin-left: 65%; }
+    section.blog .container main article:nth-child(even) .content .blogmas {
+      position: relative; }
+      section.blog .container main article:nth-child(even) .content .blogmas .contentmas {
+        margin-left: 60%;
+        width: 40%; }
+        section.blog .container main article:nth-child(even) .content .blogmas .contentmas .aparte {
+          width: 40%;
+          position: absolute;
+          top: 0;
+          left: 15%; }
+          section.blog .container main article:nth-child(even) .content .blogmas .contentmas .aparte .quote {
+            margin-top: -30px; }
+      section.blog .container main article:nth-child(even) .content .blogmas .leermenos {
+        margin-left: 60%; }
+      section.blog .container main article:nth-child(even) .content .blogmas .leermas {
+        margin-left: 60%; }
+
+@media (max-width: 600px) {
+  article:nth-child(odd) .content header {
+    width: 100% !important;
+    position: relative !important; }
+    article:nth-child(odd) .content header .lay {
+      margin-left: 36% !important; }
+    article:nth-child(odd) .content header .post-image img {
+      position: static !important;
+      top: 0;
+      max-width: 100% !important;
+      right: 0; }
+    article:nth-child(odd) .content header .lead {
+      padding-left: 20%;
+      width: 60% !important; }
+    article:nth-child(odd) .content header .description {
+      width: 100vw !important; }
+      article:nth-child(odd) .content header .description .text {
+        position: relative !important;
+        left: 20%;
+        width: 50% !important;
+        margin-left: 15% !important; }
+  article:nth-child(odd) .content .blogmas {
+    position: relative; }
+    article:nth-child(odd) .content .blogmas .contentmas {
+      margin-left: 20% !important;
+      width: 70% !important; }
+      article:nth-child(odd) .content .blogmas .contentmas .aparte {
+        margin-top: 50px;
+        padding: 5px !important;
+        width: 100% !important;
+        position: static !important; }
+        article:nth-child(odd) .content .blogmas .contentmas .aparte .quote {
+          padding: 0px 10px !important;
+          margin-top: 0 !important; }
+    article:nth-child(odd) .content .blogmas .leermas {
+      margin-left: 20% !important; }
+    article:nth-child(odd) .content .blogmas .leermenos {
+      margin-left: 20% !important; }
+  article:nth-child(even) .content header .lay {
+    margin-left: 36% !important; }
+  article:nth-child(even) .content header .post-image img {
+    position: static !important;
+    top: 0;
+    max-width: 100% !important;
+    right: 0; }
+  article:nth-child(even) .content header .lead {
+    position: static !important;
+    margin-left: 36% !important;
+    width: 60% !important; }
+  article:nth-child(even) .content header .text {
+    position: relative !important;
+    left: 20%;
+    width: 50% !important;
+    margin-left: 15% !important; }
+  article:nth-child(even) .content .blogmas {
+    position: relative; }
+    article:nth-child(even) .content .blogmas .contentmas {
+      margin-left: 30% !important;
+      width: 60% !important; }
+      article:nth-child(even) .content .blogmas .contentmas .aparte {
+        margin-top: 50px;
+        padding: 5px !important;
+        width: 100% !important;
+        position: static !important; }
+        article:nth-child(even) .content .blogmas .contentmas .aparte .quote {
+          padding: 0px 10px !important;
+          margin-top: 0 !important; }
+    article:nth-child(even) .content .blogmas .leermenos {
+      margin-left: 36% !important; }
+    article:nth-child(even) .content .blogmas .leermas {
+      margin-left: 36% !important; } }
+
+@media screen and (min-width: 1290px) {
+  section.blog .container main article .content header .lead {
+    margin-left: 0; }
+  section.blog .container main article .content .blogmas .contentmas .aparte .quote {
+    margin-top: 50px;
+    padding: 20px 70px;
+    border: solid 1px #EAA78D;
+    font-size: 1.5em; }
+  section.blog .container main article .content .blogmas .contentmas .aparte .pie {
+    margin-top: 50px;
+    line-height: 1.3; }
+  section.blog .container main article .content .blogmas .leermenos {
+    cursor: pointer;
+    margin-top: 30px;
+    display: none; }
+  section.blog .container main article .content .blogmas .leermas {
+    cursor: pointer;
+    margin-top: 30px; }
+  section.blog .container main article:nth-child(odd) .content header .post-image img {
+    position: absolute;
+    top: 0;
+    max-width: 50%;
+    right: 0; }
+  section.blog .container main article:nth-child(odd) .content header .lead {
+    width: 40%; }
+  section.blog .container main article:nth-child(odd) .content .blogmas {
+    position: relative; }
+    section.blog .container main article:nth-child(odd) .content .blogmas .contentmas {
+      width: 40%; }
+      section.blog .container main article:nth-child(odd) .content .blogmas .contentmas .aparte {
+        position: absolute;
+        top: 80px !important;
+        right: 0; }
+        section.blog .container main article:nth-child(odd) .content .blogmas .contentmas .aparte .quote {
+          margin-top: 50px !important; }
+  section.blog .container main article:nth-child(even) .content header .post-image img {
+    margin: 0;
+    position: absolute;
+    top: 0;
+    max-width: 50%;
+    left: 0; }
+  section.blog .container main article:nth-child(even) .content header .lead {
+    display: block;
+    margin-left: 60% !important;
+    width: 40% !important; }
+  section.blog .container main article:nth-child(even) .content header .text {
+    margin-left: 70% !important; }
+  section.blog .container main article:nth-child(even) .content .blogmas {
+    position: relative; }
+    section.blog .container main article:nth-child(even) .content .blogmas .contentmas {
+      margin-left: 60%;
+      width: 40%; }
+      section.blog .container main article:nth-child(even) .content .blogmas .contentmas .aparte {
+        position: absolute;
+        top: 80px !important;
+        left: 0; }
+        section.blog .container main article:nth-child(even) .content .blogmas .contentmas .aparte .quote {
+          margin-top: 0 !important; }
+    section.blog .container main article:nth-child(even) .content .blogmas .leermenos {
+      margin-left: 60%; }
+    section.blog .container main article:nth-child(even) .content .blogmas .leermas {
+      margin-left: 60%; } }
+
+section.post {
+  display: none; }
+  section.post .container {
+    width: 60%;
+    margin: 50px auto !important; }
+    section.post .container main article {
+      font-family: "Baskerville";
+      position: relative;
+      margin-bottom: 8%; }
+      section.post .container main article .content header .description {
+        position: relative;
+        width: 100%; }
+        section.post .container main article .content header .description .text {
+          position: relative; }
+      section.post .container main article .content header .lay {
+        width: 140px;
+        height: 40px; }
+        section.post .container main article .content header .lay img {
+          width: 170px;
+          height: 40px;
+          position: absolute; }
+        section.post .container main article .content header .lay time {
+          text-transform: uppercase;
+          display: block;
+          position: relative;
+          top: 11px;
+          left: 8px;
+          margin: 0;
+          font-size: .9em;
+          letter-spacing: 7px;
+          line-height: 1.5;
+          text-align: center !important;
+          font-family: "Apercu-Mono"; }
+      section.post .container main article .content header .lead {
+        margin-top: 50px; }
+      section.post .container main article .content header .post-image img {
+        width: 100%; }
+      section.post .container main article .content .blogmas {
+        letter-spacing: 3px;
+        margin-top: 50px;
+        margin-bottom: 100px; }
+
+@media (max-width: 600px) {
+  section.post .container {
+    width: 100% !important;
+    margin-top: 130px !important; }
+  section.post article .content header {
+    position: relative !important; }
+    section.post article .content header .lay {
+      margin-left: 30% !important; }
+    section.post article .content header .post-image img {
+      position: static !important;
+      top: 0;
+      width: 100% !important;
+      right: 0; }
+    section.post article .content header .lead {
+      padding-left: 25%;
+      width: 70% !important; }
+    section.post article .content header .description {
+      width: 100% !important; }
+      section.post article .content header .description .text {
+        position: relative !important;
+        left: 0% !important;
+        width: 75% !important;
+        margin-left: 20% !important; }
+  section.post article .content .blogmas {
+    position: relative; }
+    section.post article .content .blogmas .contentmas {
+      margin-left: 20% !important;
+      width: 70% !important; }
+      section.post article .content .blogmas .contentmas .aparte {
+        margin-top: 50px;
+        padding: 5px !important;
+        width: 100% !important;
+        position: static !important; }
+        section.post article .content .blogmas .contentmas .aparte .quote {
+          padding: 0px 10px !important;
+          margin-top: 0 !important; }
+    section.post article .content .blogmas .leermas {
+      margin-left: 20% !important; }
+    section.post article .content .blogmas .leermenos {
+      margin-left: 20% !important; }
+  section.post article .content .fb {
+    padding: 20px;
+    width: 50% !important !important;
+    margin: 0 auto; }
+    section.post article .content .fb .fb-comments {
+      margin: 0 auto !important; } }
+
+section.detox {
+  display: none; }
+  section.detox .container {
+    margin-bottom: 60px !important;
+    font-family: "Baskerville"; }
+    section.detox .container .lead {
+      position: relative;
+      top: -50px;
+      margin-bottom: 0px !important; }
+    section.detox .container .detox .pull {
+      z-index: -1;
+      color: #EAA78D;
+      font-style: italic;
+      position: relative;
+      bottom: 5px;
+      font-family: "Baskerville";
+      font-size: 2em;
+      text-align: center;
+      padding-right: 30px; }
+    section.detox .container .top {
+      margin-bottom: 50px; }
+      section.detox .container .top .first {
+        position: relative; }
+        section.detox .container .top .first img.tel {
+          position: absolute;
+          right: 0;
+          z-index: -1;
+          max-width: 480px; }
+      section.detox .container .top .second {
+        letter-spacing: 3px;
+        font-size: .9em; }
+        section.detox .container .top .second .float .push1 {
+          padding-left: 10px; }
+        section.detox .container .top .second .float .push2 {
+          padding-left: 20px; }
+        section.detox .container .top .second .float .push3 {
+          padding-left: 30px; }
+      section.detox .container .top .line {
+        margin: 20px 0;
+        width: 1pt;
+        height: 40px;
+        background: #EAA78D; }
+    section.detox .container .middle {
+      margin-bottom: 50px;
+      position: relative; }
+      section.detox .container .middle .zan {
+        width: 100%;
+        z-index: -1; }
+      section.detox .container .middle .square {
+        margin-top: 140px;
+        padding: 7px 45px;
+        line-height: 1.5;
+        border: solid 1px #EAA78D;
+        font-size: 1.5em;
+        letter-spacing: 3px; }
+      section.detox .container .middle p.p {
+        letter-spacing: 2px;
+        padding-left: 160px;
+        margin-top: 120px;
+        display: block;
+        width: 370px; }
+    section.detox .container .last .p {
+      padding-top: 70px;
+      letter-spacing: 3px; }
+      section.detox .container .last .p .letra {
+        position: relative; }
+        section.detox .container .last .p .letra .padding {
+          padding-left: 3%; }
+        section.detox .container .last .p .letra h2 {
+          font-size: 4em;
+          font-style: italic;
+          color: #EAA78D;
+          position: absolute;
+          top: -10px;
+          font-weight: lighter;
+          left: 26.5%;
+          z-index: -1; }
+      section.detox .container .last .p .padding {
+        padding-bottom: 10px !important; }
+    section.detox .container .last .img {
+      margin-bottom: 150px; }
+      section.detox .container .last .img img {
+        width: 100%; }
+    section.detox .container .last span {
+      text-transform: uppercase;
+      letter-spacing: 4px; }
+    section.detox .container .last .cuadro {
+      margin-top: 20px;
+      display: block;
+      line-height: 0.5;
+      padding: 20px;
+      border: solid 1px #EAA78D;
+      letter-spacing: 2px; }
+      section.detox .container .last .cuadro .list:first-child {
+        padding-left: 0px; }
+      section.detox .container .last .cuadro .list:nth-child(2) {
+        padding-left: 20px; }
+      section.detox .container .last .cuadro .list:nth-child(3) {
+        padding-left: 40px; }
+      section.detox .container .last .cuadro .list:nth-child(4) {
+        padding-left: 20px; }
+      section.detox .container .last .cuadro .list:nth-child(5) {
+        padding-left: 40px; }
+      section.detox .container .last .cuadro .list:nth-child(6) {
+        padding-left: 60px;
+        line-height: 1; }
+      section.detox .container .last .cuadro .list:nth-child(7) {
+        padding-left: 40px; }
+      section.detox .container .last .cuadro .list:nth-child(8) {
+        padding-left: 20px; }
+      section.detox .container .last .cuadro .list:nth-child(9) {
+        padding-left: 0px; }
+      section.detox .container .last .cuadro .list:nth-child(10) {
+        padding-left: 20px; }
+
+@media screen and (max-width: 600px) {
+  section.detox .container .detox .pull {
+    position: relative;
+    top: -100px; }
+  section.detox .container .middle p.p {
+    letter-spacing: 2px;
+    padding: 10px !important;
+    margin-top: 120px !important;
+    display: block;
+    width: 80% !important; } }
+
+section.antiestres {
+  display: none; }
+  section.antiestres .container {
+    margin-bottom: 30px !important; }
+    section.antiestres .container .imagen .img {
+      margin-top: -30%; }
+      section.antiestres .container .imagen .img img {
+        width: 100%; }
+    section.antiestres .container .imagen .text {
+      padding-left: 50px;
+      margin-bottom: 50px; }
+    section.antiestres .container .rocks {
+      margin-top: 50px; }
+      section.antiestres .container .rocks .float {
+        float: right; }
+      section.antiestres .container .rocks .img img {
+        width: 100%; }
+    section.antiestres .container .text-rocks {
+      margin-top: 50px; }
+    section.antiestres .container .spa {
+      margin-top: 50px; }
+      section.antiestres .container .spa .lead {
+        border-top: solid 1px #EAA78D;
+        border-bottom: solid 1px #EAA78D;
+        text-align: center;
+        padding: 10px 0; }
+
+@media screen and (max-width: 600px) {
+  section.antiestres .container .imagen .img img {
+    margin-top: 200px !important; }
+  section.antiestres .container .imagen .text {
+    margin-bottom: 50px !important; }
+  section.antiestres .container .rocks .float {
+    float: none !important; }
+  section.antiestres .container .rocks .img img {
+    margin-top: 50px !important; } }
+
+section.nutricion {
+  display: none; }
+  section.nutricion .container {
+    margin-bottom: 0px !important; }
+    section.nutricion .container .text-nutricion {
+      margin-top: 50px; }
+      section.nutricion .container .text-nutricion .img img {
+        width: 100%; }
+      section.nutricion .container .text-nutricion .float {
+        float: right; }
+    section.nutricion .container .text-text-nutricion {
+      margin-top: 50px; }
+    section.nutricion .container .sesiones {
+      font-family: "Baskerville";
+      margin-top: 50px; }
+      section.nutricion .container .sesiones .img img {
+        width: 100%; }
+      section.nutricion .container .sesiones .text2 {
+        padding: 10px 0;
+        width: 110%; }
+      section.nutricion .container .sesiones .text3 {
+        padding: 10px 0;
+        letter-spacing: 7px;
+        text-transform: uppercase; }
+    section.nutricion .container .beneficios {
+      margin-top: 50px;
+      font-family: "Baskerville"; }
+      section.nutricion .container .beneficios span {
+        text-transform: uppercase;
+        letter-spacing: 4px; }
+      section.nutricion .container .beneficios .margin {
+        margin-top: 8%; }
+      section.nutricion .container .beneficios .cuadro {
+        margin-top: 20px;
+        display: block;
+        line-height: 0.5;
+        padding: 20px;
+        border: solid 1px #EAA78D;
+        letter-spacing: 2px; }
+        section.nutricion .container .beneficios .cuadro .list:first-child {
+          padding-left: 0px; }
+        section.nutricion .container .beneficios .cuadro .list:nth-child(2) {
+          padding-left: 20px; }
+        section.nutricion .container .beneficios .cuadro .list:nth-child(3) {
+          padding-left: 40px; }
+        section.nutricion .container .beneficios .cuadro .list:nth-child(4) {
+          padding-left: 60px; }
+        section.nutricion .container .beneficios .cuadro .list:nth-child(5) {
+          padding-left: 40px; }
+        section.nutricion .container .beneficios .cuadro .list:nth-child(6) {
+          padding-left: 20px;
+          line-height: 1; }
+        section.nutricion .container .beneficios .cuadro .list:nth-child(7) {
+          padding-left: 0px; }
+        section.nutricion .container .beneficios .cuadro .list:nth-child(8) {
+          padding-left: 20px; }
+        section.nutricion .container .beneficios .cuadro .list:nth-child(9) {
+          padding-left: 40px; }
+        section.nutricion .container .beneficios .cuadro .list:nth-child(10) {
+          padding-left: 60px; }
+        section.nutricion .container .beneficios .cuadro .list:nth-child(11) {
+          margin-top: -5px;
+          padding-left: 40px;
+          line-height: 1; }
+      section.nutricion .container .beneficios .img img {
+        width: 100%; }
+
+@media screen and (max-width: 600px) {
+  section.nutricion .container .sesiones .text2 {
+    padding: 10px 0;
+    width: 70% !important;
+    margin-left: 20% !important; }
+  section.nutricion .container .sesiones .text3 {
+    padding: 10px 0;
+    letter-spacing: 7px;
+    text-transform: uppercase; }
+  section.nutricion .container .beneficios .cuadro .list:first-child {
+    padding-left: 0px; }
+  section.nutricion .container .beneficios .cuadro .list:nth-child(2) {
+    padding-left: 20px; }
+  section.nutricion .container .beneficios .cuadro .list:nth-child(3) {
+    padding-left: 40px; }
+  section.nutricion .container .beneficios .cuadro .list:nth-child(4) {
+    padding-left: 60px; }
+  section.nutricion .container .beneficios .cuadro .list:nth-child(5) {
+    padding-left: 40px; }
+  section.nutricion .container .beneficios .cuadro .list:nth-child(6) {
+    padding-left: 20px;
+    line-height: 1; }
+  section.nutricion .container .beneficios .cuadro .list:nth-child(7) {
+    padding-left: 0px; }
+  section.nutricion .container .beneficios .cuadro .list:nth-child(8) {
+    padding-left: 20px; }
+  section.nutricion .container .beneficios .cuadro .list:nth-child(9) {
+    padding-left: 40px; }
+  section.nutricion .container .beneficios .cuadro .list:nth-child(10) {
+    padding-left: 60px; }
+  section.nutricion .container .beneficios .cuadro .list:nth-child(11) {
+    margin-top: -5px;
+    padding-left: 40px;
+    line-height: 1; }
+  section.nutricion .container .beneficios .img img {
+    width: 100%; } }

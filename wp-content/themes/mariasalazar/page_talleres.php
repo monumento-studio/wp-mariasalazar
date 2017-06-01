@@ -5,7 +5,11 @@
 
 // Custom fields
 
-// $nombre_3 = get_field('nombre_3');
+$titulo_talleres                    = get_field('titulo_talleres');
+$frase_seccion_talleres             = get_field('frase_seccion_talleres');
+$descripcion_seccion_talleres       = get_field('descripcion_seccion_talleres');
+$imagen_seccion_talleres            = get_field('imagen_seccion_talleres');
+
 
 
 get_header();
@@ -20,7 +24,7 @@ get_header();
     <div class="row">
       <div class="col col--3-of-16 col--push-3-of-16">
         <div class="lead cel">
-          <h2>Talleres & Conferencias</h2>
+          <h2><?php echo $titulo_talleres; ?></h2>
         </div>
       </div>
     </div>
@@ -28,11 +32,15 @@ get_header();
       <div class="row clearfix">
         <div class="col col--4-of-16 col--push-3-of-16">
           <div class="lead cel">
-            <h2>¡Mi trabajo es mi pasión y mi vida!</h2>
+            <h2><?php echo $frase_seccion_talleres; ?></h2>
           </div>
         </div>
         <div class="col col--6-of-16 col--push-2-of-16 float-right">
-          <div class="img"><img src="assets/img/talleres/talleres-01.jpg" alt="Talleres de María Salazar"></div>
+          <div class="img">
+            <?php if ( !empty($imagen_seccion_talleres) ) : ?>
+              <div class="maria"><img src="<?php echo $imagen_seccion_talleres['url']; ?>" alt="<?php echo $imagen_seccion_talleres['alt']; ?>"></div>
+            <?php endif; ?>
+          </div>
         </div>
       </div>
     </div>
@@ -40,7 +48,7 @@ get_header();
       <div class="row">
         <div class="col col--4-of-16 col--push-4-of-16">
           <div class="text cel">
-            <p>My passion is to meet with a group of people from different institutions such as schools, women's groups and companies, where I give lectures and workshops, and give them the tools they need to be successful in all areas of their lives.</p>
+            <p><?php echo $descripcion_seccion_talleres; ?></p>
           </div>
         </div>
       </div>
@@ -49,7 +57,7 @@ get_header();
       <div class="row">
         <div class="col col--4-of-16 col--push-3-of-16">
           <div class="etiqueta"><a>
-              <div class="lay cel"><img class="blend" src="assets/img/arrow1.svg"><span>Más información</span></div></a></div>
+              <div class="lay cel"><img class="blend" src="<?php bloginfo('stylesheet_directory'); ?>/assets/img/arrow1.svg"><span>Más información</span></div></a></div>
         </div>
       </div>
     </div>

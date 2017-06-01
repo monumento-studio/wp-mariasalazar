@@ -47,7 +47,10 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 /*--------------------------------------------------------------
 # Normalize
 --------------------------------------------------------------*/
-
+.featured-thumbnail img {
+max-width: 100%;
+height: auto !important;
+}
 /*--------------------------------------------------------------
 # Typography
 --------------------------------------------------------------*/
@@ -72,6 +75,10 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 ## Menus
 --------------------------------------------------------------*/
 
+
+ul#menu-main-menu li.current-menu-item a {
+	color: #EAA78D !important;
+}
 /* Small menu. */
 .menu-toggle,
 .main-navigation.toggled ul {
@@ -680,8 +687,8 @@ body {
   background: #EAA78D; }
 
 .clearfix {
-  overflow: auto;
-  zoom: 1; }
+  overflow: auto !important;
+  zoom: 1 !important; }
 
 .block {
   display: block; }
@@ -1121,7 +1128,7 @@ a {
   outline: 0;
   cursor: pointer; }
   a:hover, a:focus {
-    color: gray; }
+    color: #EAA78D; }
 
 .button,
 button,
@@ -1355,6 +1362,12 @@ section.menu {
     nav .full .links ul li:nth-child(6) {
       letter-spacing: 8px !important; } }
 
+@media screen and (max-width: 600px) {
+  section.menu .blends .lay {
+    display: none; }
+  section.menu .blends .logo img {
+    width: 50px !important; } }
+
 section.perfil {
   display: none; }
   section.perfil .uno {
@@ -1479,7 +1492,7 @@ section.contacto {
       display: block;
       max-width: 60%;
       margin: 40px auto 10px auto;
-      overflow: auto; }
+      position: relative; }
       section.contacto .container form input::-webkit-input-placeholder {
         color: rgba(0, 0, 0, 0.15); }
       section.contacto .container form input::-moz-placeholder {
@@ -1513,21 +1526,21 @@ section.contacto {
           outline: none; }
       section.contacto .container form input[type="submit"] {
         margin-top: 50px;
-        background: url("../img/arrow.svg");
+        border: solid 1px #EAA78D;
         display: block;
         width: 132px;
-        border: none;
-        padding-left: 0;
         font-family: "Baskerville";
-        float: right;
+        display: block;
+        position: relative;
+        margin-left: 80%;
         letter-spacing: 2.5px; }
       section.contacto .container form textarea {
         letter-spacing: 3px;
         padding-left: 10px;
         padding-right: 10px;
         padding-top: 10px;
-        padding-bottom: 150px;
         width: 450px;
+        height: 250px !important;
         margin-left: 200px;
         margin-top: 50px;
         font-family: "Baskerville" !important;
@@ -1581,13 +1594,15 @@ section.contacto {
       border-bottom: solid 1px #EAA78D; }
       section.contacto form input[type="email"]:focus {
         outline: none; }
+    section.contacto form input[type="submit"] {
+      margin-left: 0 !important; }
     section.contacto form textarea {
       letter-spacing: 3px;
       padding-left: 10px;
       padding-right: 10px;
       padding-top: 10px;
-      padding-bottom: 150px;
       width: 200px !important;
+      height: 250px !important;
       margin-left: 0 !important;
       margin-top: 50px;
       font-family: "Baskerville" !important;
@@ -1604,7 +1619,10 @@ section.talleres {
     border-top: solid 1px #EAA78D;
     border-bottom: solid 1px #EAA78D; }
   section.talleres .imagen .img img {
+    float: right;
     width: 100%; }
+  section.talleres .textoo {
+    margin-top: -20%; }
   section.talleres .etiqueta {
     margin-top: 50px; }
     section.talleres .etiqueta .lay {
@@ -1901,7 +1919,8 @@ section.blog {
     max-width: 50%;
     right: 0; }
   section.blog .container main article:nth-child(odd) .content header .lead {
-    width: 40%; }
+    width: 40%;
+    margin-left: 15% !important; }
   section.blog .container main article:nth-child(odd) .content .blogmas {
     position: relative; }
     section.blog .container main article:nth-child(odd) .content .blogmas .contentmas {
@@ -1918,10 +1937,6 @@ section.blog {
     top: 0;
     max-width: 50%;
     left: 0; }
-  section.blog .container main article:nth-child(even) .content header .lead {
-    display: block;
-    margin-left: 60% !important;
-    width: 40% !important; }
   section.blog .container main article:nth-child(even) .content header .text {
     margin-left: 70% !important; }
   section.blog .container main article:nth-child(even) .content .blogmas {

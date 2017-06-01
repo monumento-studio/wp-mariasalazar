@@ -3,11 +3,6 @@
 	Template Name: Contacto Page
 */
 
-// Custom fields
-
-// $nombre_3 = get_field('nombre_3');
-
-
 get_header();
 ?>
 <section class="pree">
@@ -24,12 +19,11 @@ get_header();
         </div>
       </div>
     </div>
-    <form>
-      <input type="text" name="name" placeholder="Nombre">
-      <input type="email" name="email" placeholder="Correo Electronico">
-      <textarea placeholder="Mensaje"></textarea>
-      <input type="submit" value="Enviar">
-    </form>
+
+    <?php while ( have_posts() ) : the_post(); ?>
+      <?php the_content(); ?>
+    <?php endwhile; ?>
+
     <div class="datos cel">
       <div class="row">
         <div class="col col--3-of-16 col--push-4-of-16">

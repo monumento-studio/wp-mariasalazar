@@ -5,7 +5,6 @@
 
 // Custom fields
 
-// $nombre_3 = get_field('nombre_3');
 $titulo_programa_1 = get_field('titulo_programa_1');
 $etiqueta_programa_1 = get_field('etiqueta_programa_1');
 $descripcion_programa_1 = get_field('descripcion_programa_1');

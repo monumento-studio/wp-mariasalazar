@@ -21,7 +21,7 @@ get_header();
           <article>
             <div class="content">
               <header>
-                <div class="lay"><img src="assets/img/arrow1.svg"><a href="post.html">
+                <div class="lay"><img src="<?php bloginfo('stylesheet_directory'); ?>/assets/img/arrow1.svg"><a href="post.html">
                     <time datatime="2017-05-21">21.05.17	</time></a></div>
                 <div class="lead"><a href="post.html">
                     <h2>Magna Tellus Quam</h2></a></div>
@@ -54,7 +54,7 @@ get_header();
           <article>
             <div class="content">
               <header>
-                <div class="lay"><img src="assets/img/arrow1.svg"><a href="post.html">
+                <div class="lay"><img src="<?php bloginfo('stylesheet_directory'); ?>/assets/img/arrow1.svg"><a href="post.html">
                     <time datatime="2017-05-21">14.05.17	</time></a></div>
                 <div class="lead"><a href="post.html">
                     <h2>Aenean Ornare Mollis</h2></a></div>
@@ -87,7 +87,7 @@ get_header();
           <article>
             <div class="content">
               <header>
-                <div class="lay"><img src="assets/img/arrow1.svg"><a href="post.html">
+                <div class="lay"><img src="<?php bloginfo('stylesheet_directory'); ?>/assets/img/arrow1.svg"><a href="post.html">
                     <time datatime="2017-05-21">14.05.17	</time></a></div>
                 <div class="lead"><a href="post.html">
                     <h2>Aenean Ornare Mollis</h2></a></div>
@@ -120,7 +120,7 @@ get_header();
           <article>
             <div class="content">
               <header>
-                <div class="lay"><img src="assets/img/arrow1.svg"><a href="post.html">
+                <div class="lay"><img src="<?php bloginfo('stylesheet_directory'); ?>/assets/img/arrow1.svg"><a href="post.html">
                     <time datatime="2017-05-21">14.05.17	</time></a></div>
                 <div class="lead"><a href="post.html">
                     <h2>Aenean Ornare Mollis</h2></a></div>

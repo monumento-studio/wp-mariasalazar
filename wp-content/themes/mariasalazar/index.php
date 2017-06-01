@@ -11,46 +11,60 @@
  *
  * @package María_Salazar
  */
+ $fecha = the_field('fecha');
+ $titulo_del_post = the_field('titulo_del_post');
+ $texto_corto = the_field('texto_corto');
+ $cuerpo_del_post = the_field('cuerpo_del_post');
+ $imagen = the_field('imagen');
+ $cita = the_field('cita');
+ $texto_corto_final = the_field('texto_corto_final');
 
-get_header(); ?>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+get_header();
+?>
 
-		<?php
-		if ( have_posts() ) :
+<section class="pree">
+      <div id="gradient"></div>
+</section>
+<section class="blog">
+  <?php get_template_part('template-parts/content', 'menu'); ?>
 
-			if ( is_home() && ! is_front_page() ) : ?>
-				<header>
-					<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
-				</header>
-
+  <div class="container">
+    <main id="content" role="main">
 			<?php
-			endif;
+			if ( have_posts() ) :
 
-			/* Start the Loop */
-			while ( have_posts() ) : the_post();
+				if ( is_home() && ! is_front_page() ) : ?>
+					<header>
+						<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
+					</header>
 
-				/*
-				 * Include the Post-Format-specific template for the content.
-				 * If you want to override this in a child theme, then include a file
-				 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', get_post_format() );
+				<?php
+				endif;
 
-			endwhile;
+				/* Start the Loop */
+				while ( have_posts() ) : the_post();
 
-			the_posts_navigation();
+					/*
+					 * Include the Post-Format-specific template for the content.
+					 * If you want to override this in a child theme, then include a file
+					 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
+					 */
+					get_template_part( 'template-parts/content', get_post_format() );
 
-		else :
+				endwhile;
 
-			get_template_part( 'template-parts/content', 'none' );
+				the_posts_navigation();
 
-		endif; ?>
+			else :
 
-		</main><!-- #main -->
-	</div><!-- #primary -->
+				get_template_part( 'template-parts/content', 'none' );
+
+			endif; ?>
+		</main>
+	</div>
+</section>
+
 
 <?php
-get_sidebar();
 get_footer();

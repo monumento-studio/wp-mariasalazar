@@ -57,13 +57,13 @@ get_header();
     <div class="nutricion sec">
       <div class="row">
         <div class="col col--3-of-16 col--push-3-of-16">
-          <div class="lead"><a href="nutrición.html">
+          <div class="lead"><a href="page_nutricion.php?page_id=95">
               <h2><?php echo $titulo_programa_3; ?></h2></a></div>
         </div>
         <div class="col col--4-of-16">
           <p><?php echo $descripcion_programa_3; ?></p>
         </div>
-        <div class="col col--3-of-16 col--ab col--pull-7-of-16 arrow"><img src="<?php bloginfo('stylesheet_directory'); ?>/assets/img/arrow1.svg"><a href="nutrición.html">
+        <div class="col col--3-of-16 col--ab col--pull-7-of-16 arrow"><img src="<?php bloginfo('stylesheet_directory'); ?>/assets/img/arrow1.svg"><a href="page_nutricion.php?page_id=95">
             <p><?php echo $etiqueta_programa_3; ?> </p></a></div>
       </div>
     </div>

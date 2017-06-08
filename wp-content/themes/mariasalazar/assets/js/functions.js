@@ -78,6 +78,7 @@ $(document).ready(function () {
   $("section.detox").delay(4200).fadeIn(1500);
   $("section.nutricion").delay(4200).fadeIn(1500);
   $("section.post").delay(4200).fadeIn(1500);
+  $("section.spirit").delay(4200).fadeIn(1500);
 
 
 
@@ -85,33 +86,32 @@ $(document).ready(function () {
     $(".full").toggleClass( "none" );
     $("section.menu").toggleClass( "solid" );
   });
- //////////////////////////////////      1     /////////////////////////////////////
+  //////////////////////////////////      1     /////////////////////////////////////
+   //Blog leer mas
+   $("article.numero1 .leermas").on("click",function(){
+     $("article.numero1 .contentmas").slideDown(1000);
+     $("article.numero1 .leermas").fadeOut(1000);
+     $("article.numero1 .leermenos").fadeIn(1000);
+   });
+   //Blog leer menos
+   $("article.numero1 .leermenos").on("click",function(){
+     $("article.numero1 .contentmas").slideUp(1000);
+     $("article.numero1 .leermas").fadeIn(1000);
+     $("article.numero1 .leermenos").fadeOut(1000);
+   });
+
+ //////////////////////////////////      2     /////////////////////////////////////
   //Blog leer mas
-  $("article:nth-child(1) .leermas").on("click",function(){
-    $("article:nth-child(1) .contentmas").slideDown(1000)
-    $("article:nth-child(1) .leermas").css("display","none");
-    $("article:nth-child(1) .leermenos").css("display","block");
+  $("article.numero2 .leermas").on("click",function(){
+    $("article.numero2 .contentmas").slideDown(1000);
+    $("article.numero2 .leermas").fadeOut(1000);
+    $("article.numero2 .leermenos").fadeIn(1000);
   });
   //Blog leer menos
-  $("article:nth-child(1) .leermenos").on("click",function(){
-    $("article:nth-child(1) .contentmas").slideUp(1000)
-    $("article:nth-child(1) .leermas").css("display","block");
-    $("article:nth-child(1) .leermenos").css("display","none");
+  $("article.numero2 .leermenos").on("click",function(){
+    $("article.numero2 .contentmas").slideUp(1000);
+    $("article.numero2 .leermas").fadeIn(1000);
+    $("article.numero2 .leermenos").fadeOut(1000);
   });
 
-   //////////////////////////////////      2     /////////////////////////////////////
-
-  //Blog leer mas
-  $("article:nth-child(2) .leermas").on("click",function(){
-    $("article:nth-child(2) .contentmas").slideDown(1000)
-    $("article:nth-child(2) .leermas").css("display","none");
-    $("article:nth-child(2) .leermenos").css("display","block");
-  });
-  //Blog leer menos
-  $("article:nth-child(2) .leermenos").on("click",function(){
-    $("article:nth-child(2) .contentmas").slideUp(1000)
-    $("article:nth-child(2) .leermas").css("display","block");
-    $("article:nth-child(2) .leermenos").css("display","none");
-  });
-
-});
+   });

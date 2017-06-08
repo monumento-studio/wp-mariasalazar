@@ -11,13 +11,6 @@
  *
  * @package María_Salazar
  */
- $fecha = the_field('fecha');
- $titulo_del_post = the_field('titulo_del_post');
- $texto_corto = the_field('texto_corto');
- $cuerpo_del_post = the_field('cuerpo_del_post');
- $imagen = the_field('imagen');
- $cita = the_field('cita');
- $texto_corto_final = the_field('texto_corto_final');
 
 
 get_header();

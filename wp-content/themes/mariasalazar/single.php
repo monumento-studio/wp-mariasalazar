@@ -8,28 +8,36 @@
  */
 
 get_header(); ?>
+<section class="pree">
+      <div id="gradient"></div>
+</section>
+<section class="post">
+	<div class="container">
+			<main id="content" role="main">
+<div id="fb-root"></div>
+	<script>(function(d, s, id) {
+		var js, fjs = d.getElementsByTagName(s)[0];
+		if (d.getElementById(id)) return;
+		js = d.createElement(s); js.id = id;
+		js.src = "//connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v2.9";
+		fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));</script>
+	<?php get_template_part('template-parts/content', 'menu'); ?>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
 
 		<?php
 		while ( have_posts() ) : the_post();
 
-			get_template_part( 'template-parts/content', get_post_format() );
+			get_template_part( 'template-parts/content-page', get_post_format() );
 
-			the_post_navigation();
-
-			// If comments are open or we have at least one comment, load up the comment template.
-			if ( comments_open() || get_comments_number() ) :
-				comments_template();
-			endif;
 
 		endwhile; // End of the loop.
 		?>
 
-		</main><!-- #main -->
-	</div><!-- #primary -->
 
+  </main>
+</div>
+</section>
 <?php
-get_sidebar();
+
 get_footer();

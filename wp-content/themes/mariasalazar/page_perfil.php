@@ -14,10 +14,13 @@ $imagen_2 = get_field('imagen_2');
 $pre_descripcion_2 = get_field('pre_descripcion_2');
 $descripcion_2_soul = get_field('descripcion_2_soul');
 
+$testimonios = get_field('testimonios');
+
 $quote_1 = get_field('quote_1');
 $comentario_1 = get_field('comentario_1');
 $nombre_1 = get_field('nombre_1');
 
+$testimonios = get_field('testimonios');
 $quote_2 = get_field('quote_2');
 $comentario_2 = get_field('comentario_2');
 $nombre_2 = get_field('nombre_2');
@@ -90,7 +93,7 @@ get_header();
       <div class="row">
         <div class="col col--5-of-16 col--push-3-of-16">
           <div class="lead cel">
-            <h2>Testimonios.</h2>
+            <h2><?php echo $testimonios; ?></h2>
             <h3><?php echo $quote_1; ?></h3>
           </div>
         </div>

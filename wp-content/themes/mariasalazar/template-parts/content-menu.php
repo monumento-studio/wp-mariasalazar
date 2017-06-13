@@ -2,6 +2,8 @@
 /*
 Template Name: menu
 */
+
+
 ?>
 <section class="menu">
 	<div class="blends">
@@ -10,7 +12,7 @@ Template Name: menu
 		<div class="logo"><a href="/"><img class="blend" src="<?php bloginfo('stylesheet_directory'); ?>/assets/img/logo-negro.svg" alt="Logo María Salazar"></a></div>
 	</div>
 	<nav>
-		<div class="click">Menú</div>
+		<div class="click">Menu</div>
 		<div class="full none">
 			<div class="line"></div>
 			<div class="links">
@@ -23,7 +25,7 @@ Template Name: menu
 			 ?>
 		</div>
 		<div class="line"></div>
-		<div class="lenguaje"><a>English</a><a class="active">Español</a></div>
+		<div class="lenguaje"><?php pll_the_languages();?></div>
 		</div>
 	</nav>
 </section>

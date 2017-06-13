@@ -9,6 +9,8 @@ $titulo_talleres                    = get_field('titulo_talleres');
 $frase_seccion_talleres             = get_field('frase_seccion_talleres');
 $descripcion_seccion_talleres       = get_field('descripcion_seccion_talleres');
 $imagen_seccion_talleres            = get_field('imagen_seccion_talleres');
+$mas            = get_field('mas');
+
 
 
 
@@ -56,8 +58,8 @@ get_header();
     <div class="texto">
       <div class="row">
         <div class="col col--4-of-16 col--push-3-of-16">
-          <div class="etiqueta"><a>
-              <div class="lay cel"><img class="blend" src="<?php bloginfo('stylesheet_directory'); ?>/assets/img/arrow1.svg"><span>Más información</span></div></a></div>
+          <div class="etiqueta"><a href="">
+              <div class="lay cel"><img class="blend" src="<?php bloginfo('stylesheet_directory'); ?>/assets/img/arrow1.svg"><span><?php echo $mas; ?></span></div></a></div>
         </div>
       </div>
     </div>

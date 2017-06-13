@@ -75,6 +75,23 @@ height: auto !important;
 ## Menus
 --------------------------------------------------------------*/
 
+/* PolyLang */
+.lenguaje {
+  position: relative !important;
+}
+.lang-item {
+    list-style: none !important;
+}
+.lang-item:first-child {
+  list-style: none !important;
+  margin-left: 0px;
+  padding-left: 0px;
+  position: absolute;
+}
+
+/* */
+
+
 
 ul#menu-main-menu li.current-menu-item a {
 	color: #EAA78D !important;

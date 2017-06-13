@@ -7,6 +7,14 @@ $nombre_de_la_seccion = get_field("nombre_de_la_seccion");
 $numero_junto_a_titulo = get_field("numero_junto_a_titulo");
 $descripcion_detox = get_field("descripcion_detox");
 $imagen_1 = get_field("imagen_1");
+
+$sano = get_field("sano");
+$oxigeno = get_field("oxigeno");
+$alimentos = get_field("alimentos");
+$hidra = get_field("hidra");
+$funcionamiento = get_field("funcionamiento");
+
+
 $cita = get_field("cita");
 $descripcion_cita = get_field("descripcion_cita");
 $imagen_2 = get_field("imagen_2");
@@ -16,6 +24,8 @@ $concepto_b = get_field("concepto_b");
 $concepto_c = get_field("concepto_c");
 $texto_final = get_field("texto_final");
 $imagen_3 = get_field("imagen_3");
+
+$beneficios = get_field("beneficios");
 
 
 
@@ -59,11 +69,11 @@ get_header();
               <div class="row float">
                 <div class="col col--7-of-16 col--push-4-of-16 cel">
                   <div class="line"></div>
-                  <p>Para estar sanos, las células necesitan lo siguiente</p>
-                  <p>— Oxígeno</p>
-                  <p class="push1">— Alimentos saludables que contienen micronutrientes</p>
-                  <p class="push2">— Una hidratación adecuada</p>
-                  <p class="push3">— Un buen funcionamiento de las vías de desintoxicación</p>
+                  <p><?php echo $sano; ?></p>
+                  <p>— <?php echo $oxigeno; ?></p>
+                  <p class="push1">— <?php echo $alimentos; ?></p>
+                  <p class="push2">— <?php echo $hidra; ?></p>
+                  <p class="push3">— <?php echo $funcionamiento; ?></p>
                 </div>
               </div>
             </div>
@@ -121,19 +131,12 @@ get_header();
                   <?php if ( !empty($imagen_3) ) : ?>
         			  	  <div class="maria"><img class="tel" src="<?php echo $imagen_3['url']; ?>" alt="<?php echo $imagen_3['alt']; ?>"></div>
         					<?php endif; ?>
-                </div><span class="cel">beneficios</span>
+                </div><span class="cel"><?php echo $beneficios; ?></span>
+                
                 <div class="cuadro col col--13-of-16 cuadro">
-                  <p class="list">— Bajar de peso</p>
-                  <p class="list">— Liberar la grasa almacenada</p>
-                  <p class="list">— Renovación de las células</p>
-                  <p class="list">— Reducir la inflamación</p>
-                  <p class="list">— Mejorar tu digestión</p>
-                  <p class="list">— Fortalecer tu sistema inmunológico</p>
-                  <p class="list">— Aumentar tu deseo sexual</p>
-                  <p class="list">— Tener una piel más limpia</p>
-                  <p class="list">— Reducir la celulitis</p>
-                  <p class="list">— Dormir bien</p>
+                  <?php get_template_part('template-parts/content', 'beneficios'); ?>
                 </div>
+
               </div>
             </div>
           </div>

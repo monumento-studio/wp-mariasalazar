@@ -11,6 +11,7 @@ $imagen_1 = get_field('imagen_1');
 $texto_1 = get_field('texto_1');
 $texto_2 = get_field('texto_2');
 $texto_3 = get_field('texto_3');
+$beneficios = get_field('beneficios');
 $beneficio_1 = get_field('beneficio_1');
 $beneficio_2 = get_field('beneficio_2');
 $beneficio_3 = get_field('beneficio_3');
@@ -64,7 +65,7 @@ get_header();
             <p class="col--push-5-of-16"><?php echo $texto_3; ?></p>
             <div class="col--push-4-of-16 beneficios">
               <div class="row">
-                <div class="margin"><span class="cel">beneficios</span>
+                <div class="margin"><span class="cel"><?php echo $beneficios; ?></span>
                   <div class="cuadro cel">
                     <p class="list"><?php echo $beneficio_1; ?></p>
                     <p class="list"><?php echo $beneficio_2; ?></p>

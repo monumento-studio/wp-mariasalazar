@@ -1,6 +1,6 @@
 <?php
 /*
-	Template Name: Anti-estres Page
+	Template Name: Anti-estres
 */
 
 // Custom fields

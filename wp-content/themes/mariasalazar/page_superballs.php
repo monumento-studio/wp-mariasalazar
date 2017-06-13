@@ -10,6 +10,7 @@ $titulo_de_la_seccion = get_field('titulo_de_la_seccion');
 $descripcion = get_field('descripcion');
 $correo_electronico = get_field('correo_electronico');
 $imagen_de_la_seccion = get_field('imagen_de_la_seccion');
+$informacion = get_field('informacion');
 
 get_header();
 ?>
@@ -32,7 +33,7 @@ get_header();
           <div class="text cel">
             <p><?php echo $descripcion; ?></p>
             <div class="line"></div>
-            <p>Para más información de dónde comprar envía un correo a <a href="mailto:<?php echo $correo_electronico; ?>"><?php echo $correo_electronico; ?> </a></p>
+            <p><?php echo $informacion; ?> <a href="mailto:<?php echo $correo_electronico; ?>"><?php echo $correo_electronico; ?> </a></p>
           </div>
         </div>
         <div class="col col--6-of-16 col--push-2-of-16 float-right">
